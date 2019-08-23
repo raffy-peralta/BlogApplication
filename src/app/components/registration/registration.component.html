@@ -1,0 +1,70 @@
+<h2 style="text-align: center">Registration</h2>
+<div class="justify-content-center">
+    <form [formGroup]="registerForm" class="input-group" (ngSubmit)="registerAccount() && !error">
+        <div class="container">
+            <label for="uname">Name:</label>
+            <input type="text"  formControlName="name" name="name">
+            <span class="error-message" *ngIf="registerForm.get('name').touched 
+            || registerForm.get('name').dirty">
+                <div *ngIf="!registerForm.get('name').valid">
+                    Name is required.
+                </div>
+            </span>
+            <label for="uname">Username:</label>
+            <input type="text" formControlName="uname" name="uname" (input)="checkUsername()">
+            <span class="error-message" *ngIf="registerForm.get('uname').touched 
+            || registerForm.get('uname').dirty">
+                <div *ngIf="!registerForm.get('uname').value ? setError(true) : setError(false) ">
+                    Username is required.
+                </div>
+                <div *ngIf="!registerForm.get('uname').valid && error != true">
+                        Username must atleast 6 characters.
+                </div>
+                <div *ngIf="error != true && takenUsername">
+                        Username is already taken.
+                </div>
+            </span>
+            <label for="uname">Email:</label>
+            <input type="text" formControlName="email" name="email" (input)="checkEmail()">
+            <span class="error-message" *ngIf="registerForm.get('email').touched 
+            || registerForm.get('email').dirty">
+                <div *ngIf="!registerForm.get('email').value ? setError(true) : setError(false)">
+                    Email is required.
+                </div>
+                <div *ngIf="!registerForm.get('email').valid && error != true">
+                    Not a valid email address.
+                </div>
+                <div *ngIf="error != true && takenEmail">
+                    Email Adress is already used.
+                </div>
+            </span>
+            <label for="password" >Password</label>
+            <input type="password" formControlName="password" name="password">
+            <span class="error-message" *ngIf="registerForm.get('password').touched 
+            || registerForm.get('password').dirty">
+                <div *ngIf="!registerForm.get('password').value ? setError(true) : setError(false)">
+                    Password is required.
+                </div>
+                <div *ngIf="!registerForm.get('password').valid && error != true">
+                    Password must atleast 6 characters.
+                    </div>
+            </span>
+            <label for="password" >Confirm Password</label>
+            <input type="password" formControlName="confirmpass" name="confirmpass">
+            <span class="error-message" *ngIf="registerForm.get('confirmpass').touched 
+            || registerForm.get('confirmpass').dirty">
+                <div *ngIf="!registerForm.get('confirmpass').value ? setError(true) : setError(false)">
+                    Confirm Password is required.
+                </div>
+                <div *ngIf="registerForm.get('password').value != registerForm.get('confirmpass').value  && error != true">
+                    Passwords are not the same.
+                    </div>
+            </span>
+            <button type="submit" [disabled]="!registerForm.valid">Register</button>
+            <div class="justify-content-center">
+                <a routerLink="/login">Click here to Login.</a>
+            </div>
+        </div>
+    </form>
+</div>
+

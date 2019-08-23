@@ -1,0 +1,11 @@
+.container {
+    padding: 16px;
+}
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}
+textarea{
+    resize: none;
+}

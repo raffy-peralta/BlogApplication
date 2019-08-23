@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "name": "raffy",
+      "password": "123",
+      "username": "raffyperalta",
+      "role": 1,
+      "email": "raffy.peralta.01@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "sadsad",
+      "password": "123456",
+      "username": "rfygod",
+      "role": 2,
+      "email": "sx@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "ads",
+      "password": "123456",
+      "username": "rfygod",
+      "role": 2,
+      "email": "sx@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "New",
+      "password": "123456",
+      "username": "hehe123",
+      "role": 2,
+      "email": "raffy@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "sadsad",
+      "password": "123456",
+      "username": "rafraf",
+      "role": 2,
+      "email": "sx@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "sadsad",
+      "password": "123456",
+      "username": "sdadsads",
+      "role": 2,
+      "email": "sx@gmail.com",
+      "id": 6
+    }
+  ]
+}
