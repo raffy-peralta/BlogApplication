@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AccountsService } from '../../services/accounts/accounts.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   });
 
   email = new FormControl('');
-  constructor(public accountService: AccountsService,private router: Router) { }
+  constructor(public accountService: AccountsService,private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -29,10 +30,16 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.get('uname'));
       this.accountService.getJSON().subscribe(accounts => { this.accounts = accounts.users
         accounts.forEach(element => {
+          let json = {"name": element.name, "username": element.username, "email": element.email, 
+          "role": element.role, "id": element.id};
           if(element.username == this.loginForm.get('uname').value && element.password == 
           this.loginForm.get('password').value){
             console.log("true")
-            this.router.navigate(['home']);
+            if(element.role == 1){
+              this.authService.loginAdmin(json);
+            }else if(element.role == 2){
+              this.authService.login(json);
+            }
             this.error = false;
             
           }else{

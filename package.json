@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ikuzo":"ng serve",
+    "ikuzo": "ng serve",
     "dota": "json-server --watch src/db.json --port 5000"
   },
   "private": true,
@@ -21,6 +21,13 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "@types/jwt-decode": "^2.2.1",
+    "angular-jwt": "^0.1.11",
+    "angular2-materialize": "^15.1.10",
+    "bootstrap": "^4.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
+    "materialize-css": "^1.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

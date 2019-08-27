@@ -48,5 +48,16 @@
       "email": "sx@gmail.com",
       "id": 6
     }
+  ],
+  "blogs":[
+    {
+      "id": 1,
+      "userId": 2,
+      "title": "first blog",
+      "blog": "Hello World",
+      "status": false,
+      "dateSubmitted": "8/27/2019",
+      "dataApproved": ""
+    }
   ]
 }

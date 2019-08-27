@@ -1,11 +1,64 @@
 .container {
     padding: 16px;
 }
+.tweet-box {
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+  }
+  .tweet-input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding: 10px 12px;
+    height: 100px;
+    outline: none;
+    width: 100%;
+    resize: none;
+  }
+  .input-style {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding: 10px 12px;
+    outline: none;
+    width: 70%;
+    resize: none;
+  }
+  span {
+    float: right;
+    padding: 18px 14px;
+  }
+  .warning {
+    color: #a76c00;
+  }
+  .danger {
+    color: #800000;
+  }
+  .button-submit {
+    background-color: #ccc;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    color: #fefefe;
+    font-size: 18px;
+    float: right;
+    margin-top: 10px;
+    padding: 10px 25px;
+  }
+  button:hover {
+    background-color: #333;
+  }
+  button.active {
+    background-color: #008cff;
+    cursor: pointer;
+  }
 
-.justify-content-center {
+  
+  .justify-content-center {
     display: flex !important;
     justify-content: center !important;
-}
-textarea{
-    resize: none;
 }
