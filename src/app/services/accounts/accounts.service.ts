@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AccountsService {
   accounts: Observable<String>;
-  baseUrl = 'http://localhost:5000/users';
+  baseUrl: any = JSON.parse(localStorage.getItem('baseUrl')).baseUrl+'users';
   constructor(private http: HttpClient) { }
 
   public getJSON(): Observable<any>{

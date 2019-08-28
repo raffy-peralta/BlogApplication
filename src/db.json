@@ -49,15 +49,62 @@
       "id": 6
     }
   ],
-  "blogs":[
+  "blogs": [
     {
-      "id": 1,
-      "userId": 2,
-      "title": "first blog",
-      "blog": "Hello World",
-      "status": false,
-      "dateSubmitted": "8/27/2019",
-      "dataApproved": ""
+      "title": "sda",
+      "content": "dasdsadasd",
+      "status": 2,
+      "dateSubmitted": "Wed Aug 28 2019 16:59:21 GMT+0800 (China Standard Time)",
+      "dateApproved": "",
+      "userId": 4,
+      "id": 1
+    },
+    {
+      "title": "artikol",
+      "content": "Health care costs continue to escalate while considerable challenges remain to improve health outcomes. The United States, in particular, has the highest health care costs and the poorest health outcomes compared to other countries (Murray & Frenk, 2010; World Health Organization, 2012). However, there is an unprecedented opportunity to utilize technologies to prevent, assess, inform, and treat health behaviors across large segments of the population never before thought imaginable. This is now made possible by the ubiquity of the Internet and mobile phones across the life span and across ethnic and income groups (Borrelli, Bartlett, Tooley, Armitage, & Wearden, 2015; Duggan, 2013; Fox & Rainie, 2014; International Telecommunication Union, 2014; Pew Research Center, 2014; Smith, 2011).",
+      "status": 2,
+      "dateSubmitted": "Wed Aug 28 2019 17:14:32 GMT+0800 (China Standard Time)",
+      "dateApproved": "",
+      "userId": 3,
+      "id": 2
+    }
+  ],
+  "drafts": [
+    {
+      "title": "asdads",
+      "content": "adsadsadsadsa",
+      "userId": 3,
+      "id": 1
+    },
+    {
+      "title": "asdads",
+      "content": "adsadsadsadsa\n",
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "title": "sad",
+      "content": "asdadasd\n",
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "title": "sad",
+      "content": "asdadasd\n",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "title": "asd",
+      "content": "asdadssaddasd",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "title": "faff",
+      "content": "radasdadsas",
+      "userId": 3,
+      "id": 6
     }
   ]
 }

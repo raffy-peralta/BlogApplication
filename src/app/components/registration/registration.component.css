@@ -81,6 +81,12 @@ form {
   margin: 2px 0 10px;
   
 }
+
+.error
+{
+ border:1px solid red;
+}
+
 label {
   display: block;
   margin-bottom: 2px;

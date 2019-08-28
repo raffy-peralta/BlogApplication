@@ -7,6 +7,7 @@ import { AuthGuard } from './services/guards/auth.guard';
 import { RoleGuard } from './services/guards/role-guard.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DraftComponent } from './components/draft/draft.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,9 @@ const dashboardRoutes = [
       {
         path: '', redirectTo: 'home', pathMatch: 'full'
       },
-      
+      {
+        path: 'draft', component: DraftComponent,
+      },     
     ],
     data: {role: `2`},
     canActivate:[RoleGuard]
