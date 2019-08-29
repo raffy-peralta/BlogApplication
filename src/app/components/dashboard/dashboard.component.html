@@ -2,6 +2,6 @@
 <ul>
     <li><a routerLink="home">Blogs</a></li>
     <li><a routerLink="draft">Drafts</a></li>
-    <li style="float: right; cursor: pointer;"><a (click)="logout()">Logout</a></li>
+    <li style="float: right; cursor: pointer;"><a (click)="logout()" routerLink="../login">Logout</a></li>
 </ul>
 <router-outlet></router-outlet>

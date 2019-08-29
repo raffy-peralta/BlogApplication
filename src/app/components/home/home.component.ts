@@ -5,7 +5,7 @@ import { Blogs } from '../../models/Blogs';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReversePipe } from 'ngx-pipes';
-import { ifStmt } from '@angular/compiler/src/output/output_ast';
+
 
 
 
@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   empty: boolean;
   title: String;
   blog: String;
+  edit: boolean;
+  blogId: any;
   id = JSON.parse(localStorage.getItem('details')).id;
 
   blogForm = new FormGroup({
@@ -93,12 +95,49 @@ export class HomeComponent implements OnInit {
     this.blogsService.saveDrafts(json).subscribe((data)=>{
       this.blogForm.reset();
       this.modalService.dismissAll();
-     
+      
     });   
 
   }
 
+  editBlog(title, blog, content, id){
+    this.edit = true;
+    this.blogForm.setValue({
+      title: title,
+      blog: blog
+    });
+
+    this.blogId = id;
+    this.openLg(content);
+  }
+
+  newBlog(content){
+    this.edit = false;
+
+    this.blogForm.reset();
+    this.openLg(content);
+  }
+
+  saveBlog(){
+    if(this.blogForm.valid){
+      let json = {
+        title: this.blogForm.get('title').value, 
+        content: this.blogForm.get('blog').value,
+        status: 2,
+        dateSubmitted: Date(),
+        dateApproved: "",
+        userId: JSON.parse(localStorage.getItem('details')).id
+      }
+      this.blogsService.update(json, this.blogId).subscribe((data)=>{
+        this.blogForm.reset();
+        this.modalService.dismissAll();
+        this.getBlogs();
+      });   
+    } 
+  }
+
   openLg(content) {
+    
     this.modalService.open(content, { size: 'lg' });
   }
 

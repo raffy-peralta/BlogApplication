@@ -16,6 +16,7 @@ import { ConfigService, initializeApp } from './services/config/config.service';
 import { BlogsService } from './services/blogs/blogs.service';
 import { NgPipesModule } from 'ngx-pipes';
 import { DraftComponent } from './components/draft/draft.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DraftComponent } from './components/draft/draft.component';
     RegistrationComponent,
     AdminComponent,
     DashboardComponent,
-    DraftComponent
+    DraftComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,

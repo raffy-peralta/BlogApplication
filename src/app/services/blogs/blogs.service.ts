@@ -40,4 +40,23 @@ export class BlogsService {
     headers.set('Content-Type', 'application/json');
     return this.http.get(this.baseUrlDrafts, {headers});
   }
+
+  deleteDraft(i: number){
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.http.delete(this.baseUrlDrafts+'/'+i, {headers});
+  }
+  
+  update(data, i){
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.http.put(this.baseUrl+'/'+i, data, {headers});
+  }
+
+  editDraft(data, i){
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.http.put(this.baseUrlDrafts+'/'+i, data, {headers});
+  }
+
 }

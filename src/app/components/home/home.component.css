@@ -63,6 +63,11 @@
     justify-content: center !important;
 }
 
+.blog{
+  border-radius: 20px;
+  border-color: gray;
+}
+
 #floating-button{
   width: 55px;
   height: 55px;

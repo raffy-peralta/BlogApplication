@@ -1,4 +1,6 @@
-<p>admin works!</p>
-<button (click)="logout()">
-    Logout
-</button>
+<h2 style="text-align: center">Dashboard</h2>
+<ul>
+    <li><a routerLink="blogs">Blogs</a></li>
+    <li style="float: right; cursor: pointer;"><a (click)="logout()" routerLink="../login">Logout</a></li>
+</ul>
+<router-outlet></router-outlet>

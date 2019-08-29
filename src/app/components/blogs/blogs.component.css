@@ -6,10 +6,6 @@
     padding: 10px;
     position: relative;
   }
-  .border{
-    border: black;
-  }
-
   .tweet-input {
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -164,11 +160,9 @@
   color: red
 }
 
-.btns{
+.btn{
   background-color: DodgerBlue;
 }
-
-
 
 
 

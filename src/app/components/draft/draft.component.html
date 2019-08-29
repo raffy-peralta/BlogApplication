@@ -9,22 +9,68 @@
 </div> -->
 
 <div *ngFor="let blog of data | reverse">
-        <div class="container justify-content-center">   
-            <div class="card col-sm-8" style="padding: 20px">
-                <div class="card-body">
-                    <h5 class="card-title">{{ blog.title}}</h5>
-                    <h6 *ngIf="blog.status === 1"  class="card-subtitle mb-2 valid">Approved</h6>
-                    <h6 *ngIf="blog.status === 2"  class="card-subtitle mb-2 pending">Pending</h6>
-                    <h6 *ngIf="blog.status  === 3"  class="card-subtitle mb-2 invalid">Declined</h6>
+    <div class="container justify-content-center">   
+        <div class="card col-sm-8" style="padding: 20px">
+            <div class="card-body">
+                <h5 class="card-title">{{ blog.title}}</h5>
                     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                    <p href="" class="card-text">{{blog.content}}</p>
-                    <button (click)="deleteBlog(blog.id)" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                    
-                </div>
+                <p href="" class="card-text">{{blog.content}}</p>
+                <button (click)="deleteDraft(blog.id)" style="margin: 10px" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                <button (click)="openLg(content, blog.title, blog.content, blog.id)" style="margin: 10px" class="btn btn-secondary"><i class="fa fa-edit"></i> Edit</button>
+                <button (click)="submit(blog.title, blog.content, blog.id)" style="margin: 10px" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>     
             </div>
         </div>
-        
     </div>
+</div>
+
+<div *ngIf="empty">
+    <div class="container justify-content-center">   
+        <div class="card col-sm-8" style="padding: 20px">
+            <div class="card-body">
+                No Drafts Available                    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Blog</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <form [formGroup]="blogForm">
+        <div class="modal-body">
+            <div class="tweet-box">
+                <input [ngClass]="{'error': (blogForm.get('title').touched 
+                || blogForm.get('title').dirty) && !blogForm.get('title').valid}" type="text" formControlName="title" class="input-style" placeholder="Title">
+                <span class="error-message"  *ngIf="blogForm.get('title').touched 
+                || blogForm.get('title').dirty">
+                    <div *ngIf="!blogForm.get('title').valid">
+                        Title is required.
+                    </div>
+                </span>
+            </div>
+            
+            <div class="tweet-box">
+                <textarea [ngClass]="{'error': (blogForm.get('blog').touched 
+                || blogForm.get('blog').dirty) && !blogForm.get('blog').valid}" class="tweet-input" formControlName="blog" placeholder="Blog"></textarea> 
+            </div>
+            <div class="error-message" *ngIf="(blogForm.get('blog').touched 
+                || blogForm.get('blog').dirty) && !blogForm.get('blog').valid">
+                Blog is required.
+            </div>
+        </div>
+        <div class="modal-footer">    
+            <button (click)="saveToDrafts()" class="button-submit active" *ngIf="(blogForm.get('title').valid || blogForm.get('blog').valid ) && ((blogForm.get('blog').touched 
+            || blogForm.get('blog').dirty) || (blogForm.get('title').touched 
+            || blogForm.get('title').dirty))">Save to Drafts</button> 
+            <button type="button" (click)="submitDraft()" class="button-submit active">Submit</button>   
+        </div>
+    </form> 
+  </ng-template>
     
     
     
