@@ -11,6 +11,7 @@
                 <p href="" class="card-text">{{blog.content}}</p>
                 <button (click)="approveBlog(blog.id, blog.title, blog.content, blog.dateSubmitted, blog.userId)" style="margin: 10px" class="btn btn-success">Approve</button>
                 <button (click)="rejectBlog(blog.id, blog.title, blog.content, blog.dateSubmitted, blog.userId)" style="margin: 10px" class="btn btn-danger">Reject</button>         
+                <button (click)="addComment(modalcomment, blog)" style="margin: 10px" class="btn btn-info">Add Comment</button>
             </div>
         </div>
     </div>   
@@ -25,3 +26,21 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #modalcomment let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Comment</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+        <div class="modal-body">          
+            <div class="tweet-box">
+                <textarea class="tweet-input" [formControl]="comment" placeholder="Comment"></textarea> 
+            </div>
+        </div>
+        <div class="modal-footer"> 
+            <button type="submit" (click)="submitComment()" class="button-submit active">Save</button>   
+        </div>
+  </ng-template>

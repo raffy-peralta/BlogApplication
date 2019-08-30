@@ -22,8 +22,7 @@ import { ReversePipe } from 'ngx-pipes';
 export class HomeComponent implements OnInit {
   data: Blogs;
   empty: boolean;
-  title: String;
-  blog: String;
+  comment: string;
   edit: boolean;
   blogId: any;
   id = JSON.parse(localStorage.getItem('details')).id;
@@ -136,6 +135,12 @@ export class HomeComponent implements OnInit {
     } 
   }
 
+  openComment(content, comment) {
+    this.comment = comment;
+    console.log(comment);
+    
+    this.modalService.open(content, { size: 'lg' });
+  }
   openLg(content) {
     
     this.modalService.open(content, { size: 'lg' });
