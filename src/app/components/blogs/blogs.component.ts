@@ -23,28 +23,30 @@ export class BlogsComponent implements OnInit {
     this.getBlogs();
   }
 
-  approveBlog(id, title, content, dateSubmitted, userId){
+  approveBlog(id, title, content, dateSubmitted, userId, comment){
     let json = {
       title: title,
       content: content,
       status : 1,
       dateSubmitted: dateSubmitted,
       dateApproved: Date(),
-      userId: userId
+      userId: userId,
+      comment: comment
     };
     this.blogsService.update(json, id).subscribe((data)=>{
       this.getBlogs();
     })
   }
 
-  rejectBlog(id, title, content, dateSubmitted, userId){
+  rejectBlog(id, title, content, dateSubmitted, userId, comment){
     let json = {
       title: title,
       content: content,
       status : 3,
       dateSubmitted: dateSubmitted,
       dateApproved: Date(),
-      userId: userId
+      userId: userId,
+      comment: comment
     };
     this.blogsService.update(json, id).subscribe((data)=>{
       this.getBlogs();

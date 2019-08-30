@@ -9,8 +9,8 @@
                 <h6 *ngIf="blog.status  === 3"  class="card-subtitle mb-2 invalid">Declined</h6>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                 <p href="" class="card-text">{{blog.content}}</p>
-                <button (click)="approveBlog(blog.id, blog.title, blog.content, blog.dateSubmitted, blog.userId)" style="margin: 10px" class="btn btn-success">Approve</button>
-                <button (click)="rejectBlog(blog.id, blog.title, blog.content, blog.dateSubmitted, blog.userId)" style="margin: 10px" class="btn btn-danger">Reject</button>         
+                <button (click)="approveBlog(blog.id, blog.title, blog.content, blog.dateSubmitted, blog.userId, blog.comment)" style="margin: 10px" class="btn btn-success">Approve</button>
+                <button (click)="rejectBlog(blog.id, blog.title, blog.content, blog.dateSubmitted, blog.userId, blog.comment)" style="margin: 10px" class="btn btn-danger">Reject</button>         
                 <button (click)="addComment(modalcomment, blog)" style="margin: 10px" class="btn btn-info">Add Comment</button>
             </div>
         </div>

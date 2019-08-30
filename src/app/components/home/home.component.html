@@ -7,24 +7,41 @@
         <button class="button-submit active">Submit</button>
     </div>
 </div> -->
+<div style="float: right; position: absolute;">
 
+    <div class="row" style="margin: 10px">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{ sort[index] }}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="setSort(1)">All</button>
+              <button ngbDropdownItem (click)="setSort(2)">Approved</button>
+              <button ngbDropdownItem (click)="setSort(3)">Rejected</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
 <div *ngFor="let blog of data| reverse">
     
     <div class="container justify-content-center" *ngIf="blog.userId === id && blog.status != 2">   
-        <div class="card col-sm-8" style="padding: 20px">
-            <div class="card-body">
-                <h5 class="card-title">{{ blog.title}}</h5>
-                <h6>Status: </h6>
-                <h6 *ngIf="blog.status === 1"  class="card-subtitle mb-2 valid">Approved</h6>
-                <h6 *ngIf="blog.status === 2"  class="card-subtitle mb-2 pending">Pending</h6>
-                <h6 *ngIf="blog.status  === 3"  class="card-subtitle mb-2 invalid">Rejected</h6>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p href="" class="card-text" >{{blog.content}}</p>
-                <button (click)="openComment(modalcomment, blog.comment)" *ngIf="blog.comment" style="margin: 10px" class="btn btn-info"><i class="fa fa-comment"></i> View Comment</button>
-                <button (click)="deleteBlog(blog.id)" style="margin: 10px" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                <button (click)="editBlog(blog.title, blog.content, content,blog.id)" *ngIf="blog.status != 1" style="margin: 10px" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
+        <ng-container *ngIf="(index == 0 || index == 1) || sortValue[index] == blog.status">
+            <div class="card col-sm-8" style="padding: 20px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ blog.title}}</h5>
+                    <h6>Status: </h6>
+                    <h6 *ngIf="blog.status === 1"  class="card-subtitle mb-2 valid">Approved</h6>
+                    <h6 *ngIf="blog.status === 2"  class="card-subtitle mb-2 pending">Pending</h6>
+                    <h6 *ngIf="blog.status  === 3"  class="card-subtitle mb-2 invalid">Rejected</h6>
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                    <p href="" class="card-text" >{{blog.content}}</p>
+                   
+                    <button (click)="deleteBlog(blog.id)" style="margin: 10px" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                    <button (click)="editBlog(blog.title, blog.content, content,blog.id)" *ngIf="blog.status != 1" style="margin: 10px" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
+                    <button (click)="openComment(modalcomment, blog.comment)" *ngIf="blog.comment" style="margin: 10px" class="btn btn-info"><i class="fa fa-comment"></i> View Comment</button>
+                </div>
             </div>
-        </div>
+        </ng-container>
     </div>
     
 </div>
