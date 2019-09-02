@@ -38,14 +38,14 @@ export class AuthService {
     localStorage.setItem('details', JSON.stringify(json));
     localStorage.setItem('token', `1`);
 
-    this._router.navigate(['/admin']);
+    this._router.navigate(['/dashboard/blogs']);
   }
 
   login(json): void {
     localStorage.setItem('details', JSON.stringify(json));
     localStorage.setItem('token', `2`);
 
-    this._router.navigate(['/dashboard']);
+    this._router.navigate(['/dashboard/home']);
   }
 
   /**

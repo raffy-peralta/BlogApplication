@@ -13,9 +13,13 @@ export class RoleGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const user = this._authService.decode(); 
     console.log(2);
-     
+    //  console.log(user + "=" + next.data.role)
     if (user === next.data.role) {
-      console.log(next.data.role);
+      console.log("pumapasok");
+      
+      // console.log("role is: "+next.data.role);
+      console.log("user is " + user);
+      
       return true;
     }
 

@@ -5,64 +5,51 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { RoleGuard } from './services/guards/role-guard.service';
-import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DraftComponent } from './components/draft/draft.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { AccountGuard } from './services/guards/account.guard';
 
 
 const routes: Routes = [
-{ path: '', redirectTo: '/login', pathMatch: 'full'},
+{ path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
 { path:'register', component: RegistrationComponent, canActivate: [AuthGuard]},
-// { path: '**', redirectTo: '/dashboard'}
+// 
+
 ];
 
-const dashboardRoutes = [
-  { 
+const dashboardRoutes = [{ 
     path: 'dashboard', 
     component: DashboardComponent,
+    
     children: [
       {
-        path: 'home', component: HomeComponent,
+        path: 'home', component: HomeComponent,data: {role: `2`}, canActivate:[RoleGuard]
       },
       {
-        path: '', redirectTo: 'home', pathMatch: 'full'
+        path: 'draft', component: DraftComponent,data: {role: `2`}, canActivate:[RoleGuard]
       },
       {
-        path: 'draft', component: DraftComponent,
-      },     
-    ],
-    data: {role: `2`},
-    canActivate:[RoleGuard]
+        path: 'blogs', component: BlogsComponent,data: {role: `1`}, canActivate:[RoleGuard]
+      },
+
+    ],  
+    canActivate:[AccountGuard],
   },
+  { path: '**', redirectTo: '/dashboard'} 
+
 
 ]
 
-const adminRoutes = [
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      {
-        path: 'blogs', component: BlogsComponent,
-      },
-      {
-        path: '', redirectTo: 'blogs', pathMatch: 'full'
-      },
-    ],
-    data: {role: `1`},
-    canActivate:[RoleGuard]
-  },
-  // { path: '**', redirectTo: '/login'}
-]
+
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-  RouterModule.forChild(dashboardRoutes), RouterModule.forChild(adminRoutes)],
+  RouterModule.forChild(dashboardRoutes)],
   
-  providers: [AuthGuard, RoleGuard],
+  providers: [AuthGuard, RoleGuard,AccountGuard],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -97,7 +97,23 @@
       "userId": 3,
       "comment": "asdsadadasd",
       "id": 13
+    },
+    {
+      "title": "123123123",
+      "content": "1231231231231313",
+      "status": 2,
+      "dateSubmitted": "Mon Sep 02 2019 14:37:29 GMT+0800 (China Standard Time)",
+      "dateApproved": "",
+      "userId": 3,
+      "id": 14
     }
   ],
-  "drafts": []
+  "drafts": [
+    {
+      "title": "heheheheh",
+      "content": "eheheeadsada",
+      "userId": 3,
+      "id": 1
+    }
+  ]
 }

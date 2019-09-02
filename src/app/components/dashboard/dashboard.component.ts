@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,8 +10,17 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   
   constructor(private authService: AuthService, private router: Router) { }
+  id: number;
+  ngOnInit() {
+    this.id = JSON.parse(localStorage.getItem('details')).role;
+    // console.log(this.id);
+    if(this.id == 1){
+      this.router.navigate(['/dashboard/blogs']);
+    }else if(this.id == 2){
+      this.router.navigate(['/dashboard/home']);
+    }
 
-  ngOnInit() {  
+
   }
 
   logout(){

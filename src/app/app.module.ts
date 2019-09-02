@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AccountsService } from './services/accounts/accounts.service';
-import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgbModule, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfigService, initializeApp } from './services/config/config.service';
@@ -17,6 +16,7 @@ import { BlogsService } from './services/blogs/blogs.service';
 import { NgPipesModule } from 'ngx-pipes';
 import { DraftComponent } from './components/draft/draft.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,10 @@ import { BlogsComponent } from './components/blogs/blogs.component';
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
-    AdminComponent,
     DashboardComponent,
     DraftComponent,
-    BlogsComponent
+    BlogsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
