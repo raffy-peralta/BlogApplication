@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DraftComponent } from './components/draft/draft.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { AccountGuard } from './services/guards/account.guard';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,9 @@ const dashboardRoutes = [{
       },
       {
         path: 'blogs', component: BlogsComponent,data: {role: `1`}, canActivate:[RoleGuard]
+      },
+      {
+        path: 'profile', component: ProfileComponent, canActivate:[AccountGuard]
       },
 
     ],  

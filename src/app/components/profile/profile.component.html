@@ -1,1 +1,38 @@
-<p>profile works!</p>
+<!-- <div style="margin: 20px;" >
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                            Bhaumik Patel</h4>
+                        <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope"></i>email@example.com
+                            <br />
+                            <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
+                            <br />
+                            <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container justify-content-center">   
+    <div class="card col-sm-8" style="padding: 20px">
+        <div class="card-body">
+            <h5 class="card-title">{{ name }}</h5>
+            <small>{{username}}</small>
+            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+            <p href="" class="card-text">{{ email }}</p>
+            <p class="card-text" *ngIf="role == 1"> Role: Admin </p>
+            <p class="card-text" *ngIf="role == 2"> Role: User </p>
+
+        </div>
+    </div>
+</div> 

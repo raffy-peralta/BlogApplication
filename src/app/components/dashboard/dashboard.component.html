@@ -3,6 +3,7 @@
     <li style="margin-left: 22%" *ngIf="id == 2"><a routerLink="home" >Blogs</a></li>
     <li style="margin-left: 22%" *ngIf="id == 1"><a routerLink="blogs">Blogs</a></li>
     <li *ngIf="id == 2"><a routerLink="draft">Drafts</a></li>
+    <li ><a routerLink="profile">Profile</a></li>
     <li style="float: right; cursor: pointer; margin-right: 22%"><a (click)="logout()" routerLink="../login">Logout</a></li>
 </ul>
 <router-outlet></router-outlet>
