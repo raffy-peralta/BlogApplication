@@ -26,18 +26,24 @@ export class HomeComponent implements OnInit {
   edit: boolean;
   blogId: any;
   filter: boolean;
-  id = JSON.parse(localStorage.getItem('details')).id;
-  sort = ['Filter By: ', 'All' , 'Approved', 'Rejected']
-  sortValue = [0,0,1,3];
-  index: number = 0;
-  blogForm = new FormGroup({
-    title: new FormControl('',Validators.required),
-    blog: new FormControl('',Validators.required)
-  });
+  id: any;
+  sort: any[];
+  sortValue: any[];
+  index: number;
+  blogForm: any;
+  
   constructor(private authService: AuthService, private blogsService: BlogsService, 
     private modalService: NgbModal, private reversePipe: ReversePipe) { }
 
   ngOnInit() {
+    this.id  = JSON.parse(localStorage.getItem('details')).id;
+    this.sort = ['Filter By: ', 'All' , 'Approved', 'Rejected']
+    this.sortValue  = [0,0,1,3];
+    this.index  = 0;
+    this.blogForm = new FormGroup({
+      title: new FormControl('',Validators.required),
+      blog: new FormControl('',Validators.required)
+    });
     this.getBlogs();
 
   }

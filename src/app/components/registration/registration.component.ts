@@ -13,17 +13,18 @@ export class RegistrationComponent implements OnInit {
   takenUsername: boolean;
   takenEmail: boolean;
 
-  registerForm = new FormGroup({
-    uname: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('',[Validators.required,Validators.minLength(6)]),
-    confirmpass: new FormControl('', [Validators.required]),
-  });
+  registerForm: any;
 
   constructor(public accountsService: AccountsService, private router: Router) { }
 
   ngOnInit() {
+    this.registerForm = new FormGroup({
+      uname: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+      confirmpass: new FormControl('', [Validators.required]),
+    });
   }
 
   registerAccount(){

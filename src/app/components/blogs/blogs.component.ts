@@ -15,11 +15,13 @@ export class BlogsComponent implements OnInit {
   data: Blogs;
   blog: any;
   empty: Boolean;
-  comment = new FormControl('');
-  id = JSON.parse(localStorage.getItem('details')).id;
+  comment: any;
+  id: number;
   constructor(private blogsService: BlogsService, private modalService: NgbModal) { }
 
   ngOnInit() {
+    this.comment = new FormControl('');
+    this.id =  JSON.parse(localStorage.getItem('details')).id;
     this.getBlogs();
   }
 

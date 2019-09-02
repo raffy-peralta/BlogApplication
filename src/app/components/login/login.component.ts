@@ -14,15 +14,16 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class LoginComponent implements OnInit {
   accounts: Observable<String>;
   error: boolean;
-  loginForm = new FormGroup({
-    uname: new FormControl('', Validators.required),
-    password: new FormControl('',Validators.required),
-  });
+  loginForm: any;
 
   email = new FormControl('');
   constructor(public accountService: AccountsService,private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    this.loginForm  = new FormGroup({
+      uname: new FormControl('', Validators.required),
+      password: new FormControl('',Validators.required),
+    });
   }
  
 

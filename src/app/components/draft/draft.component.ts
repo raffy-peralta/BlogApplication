@@ -21,18 +21,20 @@ export class DraftComponent implements OnInit {
   data: any[];
   empty: boolean;
   editable: boolean;
-
+  id: number;
+  blogForm: any;
   currentDraft: number;
-  id = JSON.parse(localStorage.getItem('details')).id;
-
-  blogForm = new FormGroup({
-    title: new FormControl('',Validators.required),
-    blog: new FormControl('',Validators.required)
-  });
+  
 
   constructor(private blogsService: BlogsService, private modalService: NgbModal) { }
 
   ngOnInit() {
+    this.id = JSON.parse(localStorage.getItem('details')).id;
+
+    this.blogForm = new FormGroup({
+      title: new FormControl('',Validators.required),
+      blog: new FormControl('',Validators.required)
+    });
     this.getBlogs();
 
   }
