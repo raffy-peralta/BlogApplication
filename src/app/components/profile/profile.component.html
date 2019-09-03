@@ -32,7 +32,50 @@
             <p href="" class="card-text">{{ email }}</p>
             <p class="card-text" *ngIf="role == 1"> Role: Admin </p>
             <p class="card-text" *ngIf="role == 2"> Role: User </p>
-
+            <button class="btn btn-primary" (click)="openModalChange(changepw)">Change Password</button>
         </div>
     </div>
+    
 </div> 
+
+<ng-template #changepw let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Change Password</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+        <div class="modal-body">  
+            <form [formGroup]="changePassForm">
+                <div class="tweet-box">
+                    <input type="password" [ngClass]="{'error': (changePassForm.get('password').touched 
+                    || changePassForm.get('password').dirty) && !changePassForm.get('password').valid}" formControlName="password" class="input-style" placeholder="Password">
+                    <span class="error-message"  *ngIf="changePassForm.get('password').touched 
+                    || changePassForm.get('password').dirty">
+                        <div *ngIf="!changePassForm.get('password').value ? setError(true) : setError(false)">
+                            Password is required.
+                        </div>
+                        <div *ngIf="!changePassForm.get('password').valid && error != true">
+                            Password must atleast 6 characters.
+                        </div>
+                    </span>
+                </div>
+                <div class="tweet-box">
+                    <input type="password" formControlName="confirmpass" class="input-style" placeholder="Confirm Password">
+                    <span class="error-message"  *ngIf="changePassForm.get('confirmpass').touched 
+                    || changePassForm.get('confirmpass').dirty">
+                        <div *ngIf="!changePassForm.get('confirmpass').value ? setError(true) : setError(false)">
+                            Confirm Password is required.
+                        </div>
+                        <div *ngIf="changePassForm.get('password').value != changePassForm.get('confirmpass').value  && error != true">
+                            Passwords are not the same.
+                        </div>
+                    </span>
+                </div>   
+                <div class="modal-footer">    
+                    <button type="button" (click)="savePass()" class="button-submit active">Save</button> 
+                </div> 
+            </form>    
+        </div>
+
+  </ng-template>

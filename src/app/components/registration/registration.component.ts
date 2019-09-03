@@ -28,7 +28,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   registerAccount(){
-    if(!this.takenUsername && !this.takenEmail){
+    if(!this.takenUsername && !this.takenEmail ){
       let json = { name: this.registerForm.get('name').value, password: this.registerForm.get('password').value,
       username: this.registerForm.get('uname').value,role: 2,email: this.registerForm.get('email').value }
       console.log(json)

@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit {
 
   setSort(i){
     this.index = i;
+    this.getBlogs();
   }
 
   submitBlog(){
@@ -83,17 +84,38 @@ export class HomeComponent implements OnInit {
   }
   
   getBlogs(){
-    this.empty = false
+    this.empty = true;
     this.blogsService.getJson().subscribe((data)=>{
       this.data = data;    
-      data.forEach(element => {
-        if(element.userId == this.id){
-          this.empty = false;
-          return this.empty;
-        }else{
-          this.empty = true;
+      // data.forEach(element => {
+      //   if(element.userId == this.id){
+      //     // this.empty = false;
+      //     this.empty = true;
+      //     if(((this.index == 0 || this.index == 1) || this.sortValue[this.index] == element.status)){
+      //       this.empty = false;
+      //       return this.empty;
+      //     }
+      //     else if(element.length){
+            
+      //       return this.empty;
+      //     }
+      //     // return this.empty;
+      //   }else{
+      //     this.empty = true;
+      //     return this.empty;
+      //   }
+      // });
+      for(var i = 0; i < data.length && this.empty != false && data.length != 0; i++){
+        // console.log(this.data[i]['title']);
+        // console.log(data);
+        if(this.data[i]['userId'] == this.id){
+          if(((this.index == 0 || this.index == 1)  || this.sortValue[this.index] == this.data[i]['status']) && this.data[i]['status'] != 2 ){
+            this.empty = false;
+          }else{
+            this.empty = true;
+          }
         }
-      });
+      }
     }); 
   }
 

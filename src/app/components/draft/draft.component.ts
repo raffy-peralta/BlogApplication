@@ -46,11 +46,11 @@ export class DraftComponent implements OnInit {
         data.forEach(element => {
           if(element.userId == this.id){
             this.empty = false;
-            console.log(this.empty)
+            // console.log(this.empty)
             return this.empty;
           }else{
             this.empty = true;
-            console.log(this.empty)
+            // console.log(this.empty)
           }
         });
       }else{

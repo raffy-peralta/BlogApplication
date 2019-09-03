@@ -47,7 +47,7 @@
                 </div>
                 <div *ngIf="!registerForm.get('password').valid && error != true">
                     Password must atleast 6 characters.
-                    </div>
+                </div>
             </span>
             <label for="password" >Confirm Password</label>
             <input type="password" formControlName="confirmpass" name="confirmpass">
@@ -58,7 +58,7 @@
                 </div>
                 <div *ngIf="registerForm.get('password').value != registerForm.get('confirmpass').value  && error != true">
                     Passwords are not the same.
-                    </div>
+                </div>
             </span>
             <button type="submit" [disabled]="!registerForm.valid">Register</button>
             <div class="justify-content-center">

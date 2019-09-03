@@ -21,6 +21,11 @@ export class AccountsService {
     headers.set('Content-Type', 'application/json');
     return this.http.post(this.baseUrl, data, {headers});  
   }
+  updateProfile(data, i){
+    let headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.http.put(this.baseUrl+'/'+i, data, {headers});
+  }
   
 }
 

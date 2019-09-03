@@ -10,7 +10,7 @@
     },
     {
       "name": "Raffy Peralta",
-      "password": "123456",
+      "password": "123123",
       "username": "rfygod",
       "role": 2,
       "email": "sx@gmail.com",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Raffy Peralta",
-      "password": "123456",
+      "password": "123123",
       "username": "rfygod",
       "role": 2,
       "email": "sx@gmail.com",
@@ -61,59 +61,32 @@
       "id": 1
     },
     {
-      "title": "ASDASDasdadsa",
-      "content": "ASDSADSADASDDSAD\n",
-      "status": 1,
-      "dateSubmitted": "Thu Aug 29 2019 13:35:08 GMT+0800 (China Standard Time)",
-      "dateApproved": "Thu Aug 29 2019 15:25:46 GMT+0800 (China Standard Time)",
-      "userId": 3,
-      "id": 4
-    },
-    {
-      "title": "new2",
-      "content": "123123123",
-      "status": 3,
-      "dateSubmitted": "Fri Aug 30 2019 10:19:46 GMT+0800 (China Standard Time)",
-      "dateApproved": "Fri Aug 30 2019 14:47:42 GMT+0800 (China Standard Time)",
-      "userId": 3,
-      "comment": "123123hehe",
-      "id": 11
-    },
-    {
-      "title": "rfy",
-      "content": "123",
-      "status": 1,
-      "dateSubmitted": "Fri Aug 30 2019 14:06:07 GMT+0800 (China Standard Time)",
-      "dateApproved": "Fri Aug 30 2019 14:09:15 GMT+0800 (China Standard Time)",
-      "userId": 3,
-      "id": 12
-    },
-    {
-      "title": "Raffy",
-      "content": "123123",
-      "status": 3,
-      "dateSubmitted": "Mon Sep 02 2019 10:47:54 GMT+0800 (China Standard Time)",
-      "dateApproved": "Mon Sep 02 2019 10:51:12 GMT+0800 (China Standard Time)",
-      "userId": 3,
-      "comment": "asdsadadasd",
-      "id": 13
-    },
-    {
       "title": "123123123",
       "content": "1231231231231313",
-      "status": 2,
+      "status": 3,
       "dateSubmitted": "Mon Sep 02 2019 14:37:29 GMT+0800 (China Standard Time)",
-      "dateApproved": "",
+      "dateApproved": "Tue Sep 03 2019 15:47:09 GMT+0800 (China Standard Time)",
       "userId": 3,
       "id": 14
+    },
+    {
+      "title": "asdsa",
+      "content": "asdadadsad",
+      "status": 1,
+      "dateSubmitted": "Tue Sep 03 2019 15:47:02 GMT+0800 (China Standard Time)",
+      "dateApproved": "Tue Sep 03 2019 15:47:08 GMT+0800 (China Standard Time)",
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "title": "Try",
+      "content": "HAHAHUHUHUHUsadsa",
+      "status": 2,
+      "dateSubmitted": "Tue Sep 03 2019 16:04:14 GMT+0800 (China Standard Time)",
+      "dateApproved": "",
+      "userId": 3,
+      "id": 16
     }
   ],
-  "drafts": [
-    {
-      "title": "heheheheh",
-      "content": "eheheeadsada",
-      "userId": 3,
-      "id": 1
-    }
-  ]
+  "drafts": []
 }
