@@ -3,6 +3,7 @@ import { Blogs } from 'src/app/models/Blogs';
 import { BlogsService } from 'src/app/services/blogs/blogs.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
+import { AccountsService } from 'src/app/services/accounts/accounts.service';
 
 @Component({
   selector: 'app-blogs',
@@ -12,17 +13,27 @@ import { FormControl } from '@angular/forms';
   "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css"]
 })
 export class BlogsComponent implements OnInit {
-  data: Blogs;
+  data: any[];
   blog: any;
   empty: Boolean;
   comment: any;
   id: number;
-  constructor(private blogsService: BlogsService, private modalService: NgbModal) { }
+  users: any[];
+  constructor(private blogsService: BlogsService, private modalService: NgbModal, 
+    private accountsService: AccountsService) { }
 
   ngOnInit() {
     this.comment = new FormControl('');
     this.id =  JSON.parse(localStorage.getItem('details')).id;
+    this.getUsers();
     this.getBlogs();
+  }
+  getUsers(){
+    this.accountsService.getJSON().subscribe(data=>{
+      this.users = data
+      console.log(data);
+      
+    })
   }
 
   approveBlog(id, title, content, dateSubmitted, userId, comment){
@@ -35,6 +46,7 @@ export class BlogsComponent implements OnInit {
       userId: userId,
       comment: comment
     };
+
     this.blogsService.update(json, id).subscribe((data)=>{
       this.getBlogs();
     })
@@ -85,6 +97,8 @@ export class BlogsComponent implements OnInit {
     this.empty = true;  
     this.blogsService.getJson().subscribe((data)=>{
       this.data = data;    
+      console.log(this.data);
+      
       let i = 0;
       data.forEach(element => {
         i++;
@@ -94,6 +108,16 @@ export class BlogsComponent implements OnInit {
         }
 
       });
-    }); 
+    });     
+  }
+
+  getUser(id): string{
+    var name;
+    this.users.forEach(element => {
+      if(element.id === id){
+        name = element.name;
+      }
+    });
+    return name;
   }
 }

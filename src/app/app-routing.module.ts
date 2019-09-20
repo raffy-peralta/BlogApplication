@@ -42,8 +42,6 @@ const dashboardRoutes = [{
     canActivate:[AccountGuard],
   },
   { path: '**', redirectTo: '/dashboard'} 
-
-
 ]
 
 

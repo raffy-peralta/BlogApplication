@@ -10,7 +10,7 @@ export class AccountsService {
   accounts: Observable<String>;
   baseUrl: any = JSON.parse(localStorage.getItem('baseUrl')).baseUrl+'users';
   constructor(private http: HttpClient) { }
-
+  
   public getJSON(): Observable<any>{
     
     return this.http.get(this.baseUrl);

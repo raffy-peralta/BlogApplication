@@ -47,6 +47,14 @@
       "role": 2,
       "email": "sx@gmail.com",
       "id": 6
+    },
+    {
+      "name": "angela",
+      "password": "123456",
+      "username": "angela",
+      "role": 2,
+      "email": "a@a.com",
+      "id": 7
     }
   ],
   "blogs": [
@@ -86,6 +94,34 @@
       "dateApproved": "",
       "userId": 3,
       "id": 16
+    },
+    {
+      "title": "test submit",
+      "content": "fsdfsfdsgfgdfgdfg",
+      "status": 1,
+      "dateSubmitted": "Fri Sep 20 2019 13:37:14 GMT+0800 (China Standard Time)",
+      "dateApproved": "Fri Sep 20 2019 13:38:42 GMT+0800 (China Standard Time)",
+      "userId": 7,
+      "id": 17
+    },
+    {
+      "title": "a",
+      "content": "v",
+      "status": 3,
+      "dateSubmitted": "Fri Sep 20 2019 13:39:04 GMT+0800 (China Standard Time)",
+      "dateApproved": "Fri Sep 20 2019 13:40:05 GMT+0800 (China Standard Time)",
+      "userId": 7,
+      "id": 18
+    },
+    {
+      "title": "e",
+      "content": "f g h i ",
+      "status": 1,
+      "dateSubmitted": "Fri Sep 20 2019 13:40:27 GMT+0800 (China Standard Time)",
+      "dateApproved": "Fri Sep 20 2019 13:40:57 GMT+0800 (China Standard Time)",
+      "userId": 7,
+      "comment": "hello",
+      "id": 20
     }
   ],
   "drafts": []
